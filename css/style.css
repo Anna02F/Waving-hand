@@ -1,0 +1,128 @@
+:root {
+    /* Primary */
+    --primary-color: #185894;
+    --light-color: #f0f4f8;
+    --hover-color: #397ab7;
+    --bg-color: #243b53;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #b8bfc6;
+    color: var(--blue-grey-900);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn {
+    border: 0;
+    padding: 1em;
+    background: var(--primary-color);
+    cursor: pointer;
+    font-size: 3em;
+    color: var(--light-color);
+    border-radius: 10px;
+    transition: background, transform 0.3s ease-in-out;
+}
+
+.btn:hover,
+.btn:active {
+    background: var(--hover-color);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.svg-container svg {
+    width: 10em;
+    height: 20em;
+}
+
+/* Modal Overlay */
+
+.modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-out, z-index 0s 3s ease-out;
+}
+
+.modal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40vw;
+    height: 60vh;
+    background-color: var(--bg-color);
+    transition: opacity 0.2s;
+    box-shadow: 0 2px 4px 2px rgb(0 0 0 / 15%);
+    border-radius: 5px;
+}
+
+.modal-close-btn {
+    background: #829ab1;
+    border-radius: 100%;
+    border: 2px solid #829ab1;
+    color: var(--light-color);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 3em;
+    height: 2em;
+    opacity: 0;
+    outline: 0;
+    padding: 0.5em;
+    position: absolute;
+    right: -0.5em;
+    top: -1em;
+    transition: background, opacity 0.2s ease-in-out;
+    width: 2em;
+}
+
+.modal:hover .modal-close-btn {
+    opacity: 1;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:active,
+.modal-close-btn:focus {
+    opacity: 1;
+    background: #28547e;
+    border-color: var(--light-color);
+}
+
+.modal-svg-container {
+    width: 20em;
+}
+
+.modal-svg-container svg {
+    width: 100%;
+}
+
+.modal-is-opened .modal-overlay {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0s;
+}
+
+.modal-is-opened .wave-hand {
+    transform-origin: bottom center;
+}
