@@ -70,7 +70,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 40vw;
+    max-width: 70vw;
+    width: 80%;
     height: 60vh;
     background-color: var(--bg-color);
     transition: opacity 0.2s;
@@ -125,4 +126,21 @@ body {
 
 .modal-is-opened .wave-hand {
     transform-origin: bottom center;
+}
+
+@media screen and (max-width: 790px) {
+    .modal .wave-hand {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    .modal-close-btn {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .modal .wave-hand {
+        width: 60%;
+    }
 }
